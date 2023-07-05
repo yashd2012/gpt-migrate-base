@@ -30,7 +30,8 @@ class Globals:
 
 @app.command()
 def main(
-        model: str = typer.Option("gpt-4-32k", help="Large Language Model to be used."),
+        model: str = typer.Option("gpt-35-turbo", help="Large Language Model to be used."),
+        # model: str = typer.Option("gpt-4-32k", help="Large Language Model to be used."),
         temperature: float = typer.Option(0, help="Temperature setting for the AI model."),
         sourcedir: str = typer.Option("../benchmarks/flask-nodejs/source", help="Source directory containing the code to be migrated."),
         sourcelang: str = typer.Option(None, help="Source language or framework of the code to be migrated."),
