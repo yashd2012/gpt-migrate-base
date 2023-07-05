@@ -24,6 +24,11 @@ Migration is a costly, tedious, and non-trivial problem. Do not trust the curren
 
 However, with the collective brilliance of the OSS community and the current state of LLMs, it is also a very tractable problem.
 
+## On this fork
+
+1. This is a personal fork aimed at educational use
+2. You will find more detailed documentation to make the base project more accessible 
+
 ## ⚡️ Usage
 
 1. Install Docker and ensure that it's running. It's also recommended that you use at least GPT-4, preferably GPT-4-32k.
