@@ -12,7 +12,12 @@ OPENAI_API_VERSION = os.getenv('OPENAI_API_VERSION')
 OPENAI_API_BASE = os.getenv('OPENAI_API_BASE')
 OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
 
-AZURE_OAI_FLAG = True
+openai.api_type = os.getenv("OPENAI_API_TYPE")
+openai.api_version = os.getenv("OPENAI_API_VERSION")
+openai.api_base = os.getenv("OPENAI_API_BASE")  # Your Azure OpenAI resource's endpoint value.
+openai.api_key = os.getenv("OPENAI_API_KEY")
+
+AZURE_OAI_FLAG = os.getenv("AZURE_OAI_FLAG")
 
 class AI:
     def __init__(self, model="gpt-35-turbo", temperature=0.1, max_tokens=4000): ## GPT4 defaults: name = gpt-4-32k, max tokens = 10000
@@ -30,7 +35,7 @@ class AI:
     
     def write_code(self, prompt):
         message=[{"role": "user", "content": str(prompt)}] 
-        if AzureChatOpenAI:
+        if AZURE_OAI_FLAG:
             response = openai.ChatCompletion.create(
                 engine=self.model_name, 
                 messages = message,
@@ -54,7 +59,7 @@ class AI:
 
     def run(self, prompt):
         message=[{"role": "user", "content": str(prompt)}] 
-        if AzureChatOpenAI:
+        if AZURE_OAI_FLAG:
             response = openai.ChatCompletion.create(
                 engine=self.model_name, 
                 messages = message,
