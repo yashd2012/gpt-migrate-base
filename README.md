@@ -28,6 +28,8 @@ However, with the collective brilliance of the OSS community and the current sta
 
 1. This is a personal fork aimed at educational use
 2. You will find more detailed documentation to make the base project more accessible 
+3. Since this is educational, most default LLM calls are setup with gpt 3.5; this is unideal since the performance is quite volatile (e.g. output doesn't conform to prompted structure)
+4. Ocassionally, the OAI endpoint times out and hence improvements can be made in adding retry logic to the API requests
 
 ## ⚡️ Usage
 
