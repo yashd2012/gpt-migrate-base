@@ -17,6 +17,7 @@ def detect_language(source_directory):
             file_extensions.append(ext)
     
     extension_counts = Counter(file_extensions)
+    print(extension_counts)
     most_common_extension, _ = extension_counts.most_common(1)[0]
     
     # Determine the language based on the most common file extension
@@ -48,6 +49,7 @@ def llm_write_file(prompt,target_path,waiting_message,success_message,globals):
     
     file_content = ""
     with yaspin(text=waiting_message, spinner="dots") as spinner:
+        
         file_name,language,file_content = globals.ai.write_code(prompt)[0]
         spinner.ok("✅ ")
     
